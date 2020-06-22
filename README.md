@@ -15,21 +15,38 @@ A instalação do sistema pode ser feita seguindo os seguintes passos:
 ```bash
 C:\xampp\htdocs
 ```
-* Dentro da aplição a partir de um terminal `site_vendala`
+* Dentro da aplição a partir de um terminal `C:\xampp\htdocs\site_vendala`
 ```bash
 bower install
 ```
-* Dentro da aplição a partir de um terminal `site_vendala`
+* Dentro da aplição a partir de um terminal `C:\xampp\htdocs\site_vendala`
 ```bash
 composer update
 ```
 
-* Configurar arquivos hosts `C:\Windows\System32\drivers\etc\hosts`. Adicionar mais uma linha
+* Configurar o arquivo hosts `C:\Windows\System32\drivers\etc\hosts`. Adicionar mais uma linha
 ```bash
 127.0.0.1       vendala.local.com
 ```
+* Configurar o arquivo dentro da sua estação `C:\xampp\apache\conf\extra\httpd-vhosts.conf`. Adicionar conteúdo no final do arquivo, salvar. Em seguida reiniciar o serviço apache.
+```bash
+#### vendala.local.com VirtualHost ####			
 
+<VirtualHost 127.0.0.1:80>
+<Directory "C:/xampp/htdocs/site_vendala">
+Options FollowSymLinks Indexes
+AllowOverride All
+Order deny,allow
+allow from All
+</Directory>
+ServerName vendala.local.com
+ServerAlias vendala.local.com
+ScriptAlias /cgi-bin/ "C:/xampp/htdocs/site_vendala/cgi-bin/"
+DocumentRoot "C:/xampp/htdocs/site_vendala"
+</VirtualHost>
+```
 
+* A partir de um browser `http://vendala.local.com/`
 ### Considerações
 Repositório para consumir api_vendala.
 ### Creditos
