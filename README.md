@@ -46,7 +46,7 @@ DocumentRoot "C:/xampp/htdocs/site_vendala"
 </VirtualHost>
 ```
 
-* A partir de um browser `http://vendala.local.com/`
+* A partir de um browser `http://vendala.local.com/` usuario: admin senha: admin
 ### Considerações
 Repositório para consumir api_vendala.
 ### Creditos
