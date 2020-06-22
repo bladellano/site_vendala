@@ -6,7 +6,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Sts\\": "vendor\\vendala\\php-classes\\src"
+			"Sts\\": "class\\vendala\\php-classes\\src"
 		}
 	}
 }
