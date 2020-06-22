@@ -1,0 +1,106 @@
+   <header>
+   	<div class="container">
+   		<div class="slider-container">
+   			<div class="intro-text">
+
+   			</div>
+   		</div>
+   	</div>
+   </header>
+   <div class="container">
+   	<h2>Cadastro de Produtos</h2>
+    <p>Formulário de cadastro de produto na API.</p>    
+
+    <form id="form-product" enctype="multipart/form-data">
+
+      <div class="row">
+        <div class="col-md-6">
+         <div class="form-group">
+           <label for="name">Produto</label>
+           <input type="name" class="form-control" id="name" placeholder="Nome do produto" name="name" required>
+         </div>
+       </div>
+       <div class="col-md-6">
+         <div class="form-group">
+           <label for="category">Categoria</label>
+           <select class="form-control" id="category" name="category" required>
+             <option value="">Selecione</option>
+             {loop="$listCategories"}
+             <option value="{$value.name}">{$value.name}</option>
+             {/loop}
+           </select>
+         </div>
+       </div>
+     </div>      
+     <div class="row">
+       <div class="col-md-6">
+        <div class="form-group">
+          <label for="price">Preço</label>
+          <input type="name" class="form-control" id="price" name="price" placeholder="Preço do produto" required>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="kit">KIT</label>
+        <select class="form-control" id="kit" name="kit" required>
+          <option>Selecione</option>
+          <option value="1">SIM</option>
+          <option value="0">NÃO</option>
+        </select>
+      </div>
+    </div>
+  </div>   
+
+  <div class="wrap-kit" style="display:none">
+   <div class="row"><div class="col-md-12">Adicionar Produtos ao Kit</div></div>
+   <div class="row">
+     <div class="col-md-8">
+       <div class="form-group">					
+         <select class="form-control" id="listProducts">
+           <option>Selecione</option>
+           {loop="$listProducts"}
+           <option value="{$value.name}">{$value.name}</option>
+           {/loop}
+         </select>
+       </div>
+     </div>				
+     <div class="col-md-2">
+      <input class="form-control" type="text" placeholder="Quantidade" name="qtdProduct" id="qtdProduct">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-danger btn-block" id="add-product">Adicionar</button>
+    </div>
+  </div>
+</div>
+
+<!-- KIT -->
+<div class="wrap-list-product">
+ <div class="row">
+   <div class="col-md-12">
+     <div id="show-tabela-itens">
+
+     </div>	
+   </div>
+ </div>
+</div>
+
+<div class="form-group">
+ <label for="description">Descrição</label>
+ <input type="text" class="form-control" id="description" rows="3" name="description" required>
+</div>
+
+<div class="form-group">
+ <label for="images">Imagens</label>
+ <div class="custom-file">
+  <input type="file" multiple class="custom-file-input" id="images" name="images[]" required>
+  <label class="custom-file-label" for="customFile">Choose file</label>
+</div>
+</div>
+
+<div class="row">
+ <div class="col-md-12 text-center"><button type="submit" class="btn btn-success">Cadastrar</button></div>
+</div>
+</form>
+<br/>
+</div>

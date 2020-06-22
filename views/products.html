@@ -1,0 +1,48 @@
+   <header>
+   	<div class="container">
+   		<div class="slider-container">
+   			<div class="intro-text">
+
+   			</div>
+   		</div>
+   	</div>
+   </header>
+
+   <div class="container">
+     <h2>Lista de Produtos</h2>
+     <p>Relação de produtos cadastros na API.</p>            
+     <table class="table">
+       <thead>
+         <tr>
+           <th>Produto</th>
+           <th>Categoria</th>
+           <th>Preço</th>
+           <th>Itens</th>
+           <th>KIT</th>
+           <th>Criado</th>
+           <th>#</th>
+        </tr>
+     </thead>
+     <tbody> 
+
+      {loop="$listProducts"}
+      <tr>
+        <td>{$value.name}</td>
+        <td>{$value.category}</td>
+        <td>R$ {function="formatPrice($value.price)"}</td>
+        <td>{$value.cod_product_kit}</td>
+        <td>{function="isKit($value.kit)"}</td>
+        <td>{function="formatDate($value.created_at)"}</td>
+        <td><a href="#" idProduct="{$value.id}" class="btn btn-danger btn-remove-product"><i class="fa fa-trash"></i></a> </td>
+     </tr>
+     {/loop} 
+
+  </tbody>
+</table>
+<ul class="pagination justify-content-center">
+   {loop="$pages"}
+   <li class="page-item"><a class="page-link" href="{$value.href}">{$value.text}</a></li>
+   {/loop}
+
+</ul>
+</div>

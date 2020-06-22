@@ -1,0 +1,15 @@
+application/cache/*
+#bower_components/
+cgi-bin/
+/vendor/
+tmp/
+# IDE Files
+/nbproject/
+.idea/*
+composer.lock
+## Sublime Text cache files
+/tests/tests/
+/tests/results/
+/views-cache/
+/bower_components/
+#env.php
