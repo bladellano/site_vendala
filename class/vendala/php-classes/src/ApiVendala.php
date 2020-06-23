@@ -12,7 +12,7 @@ class ApiVendala{
 	 * @param  integer $page       [No da página solicitada]
 	 * @return [array]             [Relação de produtos]
 	 */
-	public function getProducts($pagination=1,$page=1)
+	public function getProducts($pagination, $page=1)
 	{
 
 		try {
